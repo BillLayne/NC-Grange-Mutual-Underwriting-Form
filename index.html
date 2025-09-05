@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Insurance Photo Guide | Bill Layne Insurance & NC Grange</title>
+    <meta name="description" content="A simple, step-by-step guide from Bill Layne Insurance to help you take the 6 types of photos needed for your NC Grange Mutual homeowners application.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Base Styles & Variables --- */
+        :root {
+            --primary-color: #0056b3; /* A professional blue */
+            --accent-color: #28a745; /* Green for Success/Go */
+            --bg-color: #f0f4f8;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e0e0e0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 850px; /* Slightly wider to accommodate images */
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .agency-info h1 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .agency-info p {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        /* --- Main Content & Wizard --- */
+        main {
+            padding: 40px;
+            /* Set a minimum height to prevent the layout jumping between steps */
+            min-height: 600px; 
+        }
+        
+        /* Hide all steps initially, show only the active one */
+        .step-container {
+            display: none; 
+        }
+        .step-container.active {
+            display: block; 
+        }
+        
+        h2 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Layout for steps with images */
+        .step-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .step-text {
+            flex: 1;
+        }
+        .step-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Image Styling (Replaces Placeholder) */
+        .example-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+        
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Informational Boxes --- */
+        .info-box {
+            background-color: #e7f1ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 15px;
+            color: #856404;
+        }
+
+        /* --- Navigation Buttons --- */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: opacity 0.3s, background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-success {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* --- Submission Step Styles --- */
+        .submission-options {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .option-card {
+            flex: 1;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fafafa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .option-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .option-card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* --- Copy/Fallback Feature Styles --- */
+        .fallback-container {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        .copy-address {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .address-text {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--text-color);
+        }
+        .btn-copy {
+            padding: 5px 10px;
+            font-size: 12px;
+            background-color: #e0e0e0;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+        .btn-copy:hover {
+            background-color: #d4d4d4;
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            padding: 30px 40px;
+            border-top: 1px solid var(--border-color);
+            background-color: #f9f9f9;
+            font-size: 14px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            header, main, footer {
+                padding: 25px;
+            }
+            main {
+                min-height: auto;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo {
+                margin-top: 15px;
+            }
+            /* Stack image above text on mobile */
+            .step-content {
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+            /* Stack submission options on mobile */
+             .submission-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="agency-info">
+                <h1>Bill Layne Insurance Agency</h1>
+                <p>1283 N Bridge St, Elkin, NC 28621 | (336) 835-1993</p>
+            </div>
+            <div class="logo">
+                <img src="https://i.imgur.com/Fesnkng.png" alt="NC Grange Mutual Insurance Logo">
+            </div>
+        </header>
+
+        <main>
+            
+            <div class="step-container active" id="step-0">
+                <h2>Let's Finalize Your Home Insurance!</h2>
+                <p>Welcome! We are excited to help protect your home with NC Grange Mutual.</p>
+                <p>Because your home was built more than 30 years ago, the insurance company needs a few photos to complete your application. This guide will walk you through the 6 required photos.</p>
+                
+                <div class="info-box">
+                    <strong>How long will this take?</strong> About 10 minutes. You can easily use your smartphone to take the pictures as you follow the steps.
+                </div>
+
+                <div class="navigation">
+                    <button class="btn btn-secondary" disabled>Back</button>
+                    <button class="btn btn-success" onclick="nextStep(0)">Start Photo Guide</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-1">
+                <h2>Step 1 of 6: The Outside of Your Home</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>Please walk around the outside of your house and take clear photos of the exterior. We need photos of:</p>
+                        <ul>
+                            <li>The Front</li>
+                            <li>The Back</li>
+                            <li>Left side</li>
+                            <li>Right side</li>
+                        </ul>
+                        <p><strong>Tip:</strong> Make sure the lighting is good and try to capture the whole side in the shot, just like the examples.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="https://github.com/BillLayne/bill-layne-images/blob/main/general/all%204%20sides.webp?raw=true" alt="Example collage showing the front, back, left, and right sides of a home." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(1)">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep(1)">Next Step</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-2">
+                <h2>Step 2 of 6: Outbuildings and Structures</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>Do you have any other structures on your property? We need photos of those too.</p>
+                        <p>Examples include:</p>
+                        <ul>
+                            <li>Detached garages</li>
+                            <li>Sheds or barns</li>
+                            <li>Carports</li>
+                            <li>Fences</li>
+                        </ul>
+                        <p><strong>Tip:</strong> If you don't have any other structures, you can skip taking photos for this step and just click Next Step.</p>
+                    </div>
+                    <div class="step-image">
+                         <img src="https://github.com/BillLayne/bill-layne-images/blob/main/general/shed%20outbuilding.webp?raw=true" alt="Example collage showing a detached garage, carport, shed, and fence." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep(2)">Next Step</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-3">
+                <h2>Step 3 of 6: Main Living Room</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>Now let's move inside. We need general photos of your primary living area or family room.</p>
+                        <p>This helps underwriters see the general condition of the interior.</p>
+                        <p><strong>Tip:</strong> Take a couple of wide shots from different corners to ensure the floor, walls, and ceiling are visible.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="https://github.com/BillLayne/bill-layne-images/blob/main/general/interior%20living%20room.webp?raw=true" alt="Example collage showing different angles of a living room interior." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep(3)">Next Step</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-4">
+                <h2>Step 4 of 6: The Kitchen</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>Photos showing the overall condition of your kitchen.</p>
+                        <p>We are looking to clearly see the cabinets, countertops, and flooring.</p>
+                         <p><strong>Tip:</strong> Ensure the lights are on for a bright, clear picture of the fixtures.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="https://github.com/BillLayne/bill-layne-images/blob/main/general/Interior%20kitchen.webp?raw=true" alt="Example collage showing the cabinets, countertops, and flooring of a kitchen." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(4)">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep(4)">Next Step</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-5">
+                <h2>Step 5 of 6: Under the Sinks (Plumbing)</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>This is important to check for leaks or potential water damage.</p>
+                        <p>Please open the cabinets and take a clear photo of the plumbing underneath:</p>
+                        <ul>
+                            <li>The kitchen sink</li>
+                            <li>All bathroom sinks</li>
+                        </ul>
+                        <p><strong>Tip:</strong> You will likely need to use your phone's flashlight (torch) to get a clear, bright picture of the pipes, as shown in the example.</p>
+                    </div>
+                    <div class="step-image">
+                         <img src="https://github.com/BillLayne/bill-layne-images/blob/main/general/Kitchen%20undersink.webp?raw=true" alt="Example collage showing clear plumbing under a kitchen sink and a bathroom sink." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep(5)">Next Step</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-6">
+                <h2>Step 6 of 6: The Breaker Box (Electrical Panel)</h2>
+                <div class="step-content">
+                    <div class="step-text">
+                        <h3>What we need:</h3>
+                        <p>The final photo! We need to see the condition of your electrical system.</p>
+                        <p>Please locate your electrical panel (breaker box), <strong>open the door</strong>, and take a picture of the breakers inside.</p>
+                        <div class="warning-box">
+                            <strong>Safety First:</strong> Do not touch anything inside the box, just open the door and take the photo.
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <img src="https://raw.githubusercontent.com/BillLayne/bill-layne-images/0e080ff5761528fb27b34357e387dbfe5f2a261b/general/Interior%20kitchen.webp" alt="Example showing the correct way (open door) vs the incorrect way (closed door) to photograph a breaker box." class="example-image">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(6)">Back</button>
+                    <button class="btn btn-success" onclick="nextStep(6)">Finish & Submit</button>
+                </div>
+            </div>
+
+            <div class="step-container" id="step-7">
+                <h2>You're All Done! Time to Submit.</h2>
+                <p>Great job! You have gathered all the photos needed for your application. Please choose the easiest way to send them.</p>
+
+                <div class="info-box">
+                    <strong>How to Attach Photos:</strong> The buttons below will attempt to open your apps. You must manually attach the photos from your camera roll (look for the paperclip icon or the photo gallery icon) before hitting send.
+                </div>
+
+                <div class="submission-options">
+                    
+                    <div class="option-card">
+                        <h3>Option 1: Text Photos (Fastest)</h3>
+                        <p>Fast and easy from your smartphone. Click the button, attach the photos, ensure your address is in the message, and press send.</p>
+                        
+                        <a href="sms:+13368506906?&body=Home%20Insurance%20Photos.%20Address:%20[Your%20Address].%20From:%20[Your%20Name]" class="btn btn-success" style="width: 100%;">
+                            Open Text App
+                        </a>
+                        
+                        <div class="fallback-container">
+                            <p>If the button fails, copy the number below:</p>
+                            <div class="copy-address">
+                                <span class="address-text" id="textNumber">3368506906</span>
+                                <button class="btn btn-copy" onclick="copyToClipboard('textNumber', this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-card">
+                        <h3>Option 2: Email Photos</h3>
+                        <p>Best for sending high-quality images. Click the button to start your email, then attach the photos and press send.</p>
+                        
+                        <a href="mailto:Save@BillLayneInsurance.com?subject=Home%20Insurance%20Photos&body=Attached%20are%20my%20insurance%20photos.%0D%0A%0D%0AProperty%20Address:%20[Enter Your Address Here]%0D%0A%0D%0AThank%20you,%0D%0A[Your%20Name]" class="btn btn-primary" style="width: 100%;">
+                            Open Email App
+                        </a>
+                        
+                        <div class="fallback-container">
+                            <p>If the button fails, copy the address below:</p>
+                            <div class="copy-address">
+                                <span class="address-text" id="emailAddress">Save@BillLayneInsurance.com</span>
+                                <button class="btn btn-copy" onclick="copyToClipboard('emailAddress', this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevStep(7)">Go Back</button>
+                    <div></div> </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p><strong>Bill Layne Insurance Agency</strong></p>
+            <p>Office: <a href="tel:3368351993" style="color: inherit; text-decoration: none;">(336) 835-1993</a> | Text: <a href="tel:3368506906" style="color: inherit; text-decoration: none;">(336) 850-6906</a></p>
+             <p><a href="https://www.BillLayneInsurance.com" target="_blank" style="color: inherit; text-decoration: none;">www.BillLayneInsurance.com</a></p>
+            <p style="font-size: 12px; margin-top: 15px;">This request is part of the standard underwriting procedure for select properties and does not represent a binder or guarantee of insurance.</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for step navigation (Wizard)
+        function nextStep(currentStep) {
+            const currentElement = document.getElementById('step-' + currentStep);
+            const nextElement = document.getElementById('step-' + (currentStep + 1));
+
+            if (nextElement) {
+                currentElement.classList.remove('active');
+                nextElement.classList.add('active');
+                // Scroll to top smoothly for the new step, useful on mobile
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+            }
+        }
+
+        function prevStep(currentStep) {
+            const currentElement = document.getElementById('step-' + currentStep);
+            const prevElement = document.getElementById('step-' + (currentStep - 1));
+
+            if (prevElement) {
+                currentElement.classList.remove('active');
+                prevElement.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // JavaScript for Copy to Clipboard
+        function copyToClipboard(elementId, buttonElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            
+            // Use the modern Clipboard API
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Success feedback
+                const originalText = buttonElement.innerText;
+                buttonElement.innerText = 'Copied!';
+                buttonElement.style.backgroundColor = 'var(--accent-color)';
+                buttonElement.style.color = 'white';
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    buttonElement.innerText = originalText;
+                    buttonElement.style.backgroundColor = '#e0e0e0';
+                    buttonElement.style.color = '#333';
+                }, 2000);
+                
+            }).catch(err => {
+                // Error handling
+                console.error('Could not copy text: ', err);
+                alert('Failed to copy. Please manually copy the address.');
+            });
+        }
+    </script>
+
+</body>
+</html>
